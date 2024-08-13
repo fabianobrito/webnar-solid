@@ -13,7 +13,7 @@ public class AccountStrategy {
         this.openAccountTypeService = openAccountTypeService;
     }
 
-    public TypeAccount getTypeAccount(BigDecimal income){
+    public TypeAccount getTypeAccount(BigDecimal income) throws Exception {
 
         return openAccountTypeService.returnIncome(income);
     }

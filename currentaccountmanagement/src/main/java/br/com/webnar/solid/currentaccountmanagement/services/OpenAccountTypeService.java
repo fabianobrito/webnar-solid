@@ -5,5 +5,5 @@ import br.com.webnar.solid.currentaccountmanagement.enums.TypeAccount;
 import java.math.BigDecimal;
 
 public interface OpenAccountTypeService {
-    TypeAccount returnIncome(BigDecimal income);
+    TypeAccount returnIncome(BigDecimal income) throws Exception;
 }

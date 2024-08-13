@@ -30,8 +30,12 @@ public class BankAccountManagementWithoutSolidImplService implements AccountMana
 
     @Override
     public boolean createClient(Client client) {
+        return false;
+    }
 
-        return this.accountRepository.createClient(client);
+    @Override
+    public Optional<Client> findClient(NoSolidAccount account) {
+        return Optional.empty();
     }
 
     @Override
@@ -118,23 +122,11 @@ public class BankAccountManagementWithoutSolidImplService implements AccountMana
 
     @Override
     public boolean billPayment(String barCode) {
-        System.out.println("Pagamento realizado com sucesso");
-        return true;
+        return false;
     }
 
     @Override
     public String smsMessage(long accountNumber) {
-        return "Enviou Mensagem";
-    }
-
-    @Override
-    public Optional<Client> findClient(NoSolidAccount account) {
-        if (!StringUtils.isEmpty(account.getCpf()))
-            return this.accountRepository.dataClient(account.getCpf());
-
-        if (!StringUtils.isEmpty(account.getCnpj()))
-            return this.accountRepository.dataClient(account.getCnpj());
-
         return null;
     }
 }

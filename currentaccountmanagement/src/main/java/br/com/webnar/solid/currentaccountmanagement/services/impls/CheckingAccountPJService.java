@@ -11,19 +11,19 @@ import br.com.webnar.solid.currentaccountmanagement.services.AccountManagementSe
 import br.com.webnar.solid.currentaccountmanagement.services.OpenAccountTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 @Service
-@Primary
-public class CheckingAccountPFService implements AccountAdditionalPackageService, AccountManagementService {
+@Qualifier("checkingAccountPJService")
+public class CheckingAccountPJService implements AccountManagementService, AccountAdditionalPackageService {
 
     @Autowired
     private AccountRepository accountRepository;
 
     @Autowired
+    @Qualifier("accountPJService")
     private OpenAccountTypeService openAccountTypeService;
 
     @Override
